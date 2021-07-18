@@ -1,5 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { requireSession } from '@clerk/clerk-sdk-node'
 
 export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+  res.statusCode = 200
+  res.json({ id: req.sesion.userId })
 }
